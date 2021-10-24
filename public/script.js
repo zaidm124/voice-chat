@@ -15,7 +15,7 @@ let myVideoStream;
 
 navigator.mediaDevices
   .getUserMedia({
-    video: true,
+    video: false,
     audio: true,
   })
   .then((stream) => {
@@ -55,15 +55,17 @@ const addVideoStream = (video, stream) => {
   video.addEventListener("loadedmetadata", () => {
     video.play();
   });
-  VideoGrid.append(video);
+  // VideoGrid.append(video);
 };
 
 const muteUnmute = () => {
   console.log(myVideoStream);
-  //   const enabled = myVideoStream.getAudioTracks()[0].enabled;
-  //   if (enabled) {
-  //     myVideoStream.getAudioTracks()[0].enabled = false;
-  //   } else {
-  //     myVideoStream.getAudioTracks()[0].enabled = true;
-  //   }
+  const enabled = myVideoStream.getAudioTracks()[0].enabled;
+  if (enabled) {
+    myVideoStream.getAudioTracks()[0].enabled = false;
+    document.getElementById("sound").innerHTML = "unmute";
+  } else {
+    myVideoStream.getAudioTracks()[0].enabled = true;
+    document.getElementById("sound").innerHTML = "mute";
+  }
 };
