@@ -2,9 +2,7 @@ const myVideo = document.createElement("video");
 myVideo.muted = true;
 
 var peer = new Peer(undefined, {
-  path: "/peerjs",
-  host: "https://voice-chat-m3gd.onrender.com/",
-  port: "10000",
+  host: "https://voice-chat-m3gd.onrender.com",
   secure:true
 });
 
