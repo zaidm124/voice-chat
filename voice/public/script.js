@@ -4,7 +4,7 @@ myVideo.muted = true;
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "https://voice-chat-m3gd.onrender.com/",
-  port: "443",
+  port: "10000",
   secure:true
 });
 
